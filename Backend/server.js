@@ -1,8 +1,12 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const cors = require("cors");
 
 const app = express();
 const port = 3000;
+app.use(cors()); // allow all origins
+
+// Allow all origins (development)
 
 app.use(express.json());
 
