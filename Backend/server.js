@@ -125,7 +125,10 @@ app.delete("/deleteuser/:id", async (req, res) => {
 });
 
 app.get("/", (req, res) => {
-  res.send("Server is running 🚀");
+  res.status(200).json({
+    message: "Server is running 🚀",
+    status: "success"
+  });
 });
 
 app.listen(port, () => {
