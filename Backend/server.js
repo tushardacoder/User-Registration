@@ -16,23 +16,24 @@ mongoose
     console.error("❌ Error connecting to MongoDB:", err);
   });
 
-// Todo Schema
-const todoSchema = new mongoose.Schema({
-  title: {
+// Schema
+const userSchema = new mongoose.Schema({
+ title: {
     type: String,
     required: true,
   },
   description: String,
+
   completed: {
     type: Boolean,
     default: false,
   },
-  user: {
-    type: mongoose.Schema.Types.ObjectId,
-    ref: "User", // link with User
-    required: true,
+
+  completedAt: {
+    type: Date,
+    default: null,
   },
-}, { timestamps: true });
+});
 
 const User = mongoose.model("User", userSchema);
 
